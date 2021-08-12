@@ -5,7 +5,7 @@ $phone = $_POST['phone'];
 $messege = $_POST['messege'];
 
 
-$email_form ='pcsdasdp@gmail.com';
+$email_form ='info@arnobsd.github.io/Test';
 $email_subject ='New Form Submission';
 $email_body ="User Name: $name.\n".
                 "User Email: $visitor_email.\n".
