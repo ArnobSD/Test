@@ -325,7 +325,7 @@
                     <h3 class="section-subheading text-muted">Please Give All Information.</h3>
                 </div>
               
-                <form id="contactForm" action="form-handler.php" method="post">
+                <form id="contactForm" method="post" name="google-sheet">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -367,6 +367,20 @@
                     <!-- Submit Button-->
                     <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase " id="submitButton" type="submit">Send Request</button></div>
                 </form>
+                
+                <script type="text/javascript">
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbz0e_sGi6Og-OW1Cs4YhVp19BUTwBSVDvMYRaHefvhwoXtfvgewtMVm70r_zSj2vRQ/exec'
+                            const form = document.forms['google-sheet']
+                          
+                            form.addEventListener('submit', e => {
+                              e.preventDefault()
+                              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                                .catch(error => console.error('Error!', error.message))
+                            })
+                </script>
+
+                
             </div>
         </section>
 
